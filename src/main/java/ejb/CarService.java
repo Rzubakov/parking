@@ -63,7 +63,7 @@ public class CarService {
         Calendar calendar2 = Calendar.getInstance();
         calendar1.setTime(car.getTime());
         calendar2.setTime(new Date());
-        return (Double) Math.ceil(((calendar2.getTimeInMillis() - calendar1.getTimeInMillis()) / 1000 * 0.01f));
+        return (Double) Math.ceil(((calendar2.getTimeInMillis() - calendar1.getTimeInMillis()) / 1000 * (100/60/60)));
     }
 
 }
