@@ -13,8 +13,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "Car.getByNumber", query = "select c from Car c WHERE c.number=:number"),  
-    @NamedQuery(name = "Car.getAll", query = "select count(*) from Car c"),
+    @NamedQuery(name = "Car.getByNumber", query = "select c from Car c WHERE c.number=:number")
+    ,  
+    @NamedQuery(name = "Car.getAll", query = "select count(*) from Car c")
+    ,
     @NamedQuery(name = "Car.checkNumber", query = "select count(*) from Car c where c.number=:number")
 })
 public class Car extends EntityModel {
@@ -23,7 +25,7 @@ public class Car extends EntityModel {
         super();
     }
     @NotNull
-    @Pattern(regexp="([а-я]{1})([0-9]{3})([а-я]{2})") 
+    @Pattern(regexp = "([а-я]{1})([0-9]{3})([а-я]{2})")
     private String number;
     @NotNull
     private String model;
@@ -53,10 +55,9 @@ public class Car extends EntityModel {
     public void setTime(Date time) {
         this.time = time;
     }
-    
-    
+
     @PrePersist
-    public void prePersistent(){
+    public void prePersistent() {
         this.setTime(new Date());
     }
 }

@@ -18,26 +18,6 @@ public class PriceDAO extends AbstractService<Price> {
         super();
     }
 
-    @Override
-    public void delete(Price t) {
-        manager.remove(t);
-    }
-
-    @Override
-    public void add(Price t) {
-        manager.persist(t);
-    }
-
-    @Override
-    public void update(Price t) {
-        manager.merge(t);
-    }
-
-    @Override
-    public Price get(Long t) {
-        return manager.find(Price.class, t);
-    }
-
     public List<Price> getPriceByDay(Date date) {
         return manager.createNamedQuery("Price.getByDay").setParameter("date", date, TemporalType.DATE).getResultList();
     }

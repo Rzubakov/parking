@@ -13,6 +13,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+
 @XmlRootElement
 @Entity
 @NamedQueries({
@@ -25,7 +26,6 @@ public class Price extends EntityModel {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date date;
 
-    
     public Price() {
         super();
     }
@@ -33,7 +33,7 @@ public class Price extends EntityModel {
     public Price(Double price) {
         this.price = price;
     }
-    
+
     public Double getPrice() {
         return price;
     }
@@ -49,8 +49,9 @@ public class Price extends EntityModel {
     public void setDate(Date date) {
         this.date = date;
     }
+
     @PrePersist
-    public void prePersistent(){
+    public void prePersistent() {
         this.setDate(new Date());
     }
 }
