@@ -4,10 +4,7 @@
     <session-config>
         <session-timeout>10</session-timeout>
     </session-config>
-    <!-- Errors -->
-    <error-page>
-        <location>/general-error.xhtml</location>
-    </error-page> 
+
     <welcome-file-list>
         <welcome-file>/index.xhtml</welcome-file>
     </welcome-file-list>

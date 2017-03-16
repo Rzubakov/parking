@@ -2,12 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"  
       xmlns:h="http://java.sun.com/jsf/html"  
       xmlns:f="http://java.sun.com/jsf/core"  
-
       xmlns:ui="http://java.sun.com/jsf/facelets">  
     <h:head>
     </h:head>
     <h:body>
-
+        <p>
+            /api/parking/put?number=к721мв&model=BMW - разместить на парковке
+            /api/parking/delete?number=к721мв - удалить с парковки
+            
+            /api/parking/check?number=к721мв - проверить наличие авто на парковке
+            /api/parking/free - количество свободных мест
+            /api/parking/count - количество авто на парковке
+            
+            /api/parking/pricebydate?date=2017-03-16 - выручка за указанный день
+        </p>    
 
     </h:body>
 </html>   
