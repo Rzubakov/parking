@@ -59,11 +59,11 @@ public class CarService {
     }
 
     private Double calculatePrice(Car car) {
-        Calendar calendar1 = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
-        calendar1.setTime(car.getTime());
-        calendar2.setTime(new Date());
-        return Math.ceil((calendar2.getTimeInMillis() - calendar1.getTimeInMillis() / 1000) * (100.0/3600)));
+        Calendar putTime = Calendar.getInstance();
+        Calendar getTime = Calendar.getInstance();
+        putTime.setTime(car.getTime());
+        getTime.setTime(new Date());
+        return Math.ceil((getTime.getTimeInMillis() - putTime.getTimeInMillis() / 1000) * (100.0/3600)));
     }
 
 }
