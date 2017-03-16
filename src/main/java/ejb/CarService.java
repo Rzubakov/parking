@@ -21,11 +21,11 @@ public class CarService {
     }
 
     public Car getCarById(Long id) {
-        return (Car) carDAO.get(id);
+        return carDAO.get(id);
     }
 
     public Car getCarByNumber(String number) {
-        return (Car) carDAO.getByNumber(number);
+        return carDAO.getByNumber(number);
     }
 
     public Long getCount() {
